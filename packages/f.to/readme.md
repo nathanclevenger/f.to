@@ -5,10 +5,4 @@ _Warning: this project is not production ready, API might change without notice.
 **[⨏.to](https://⨏.to)** is an HTTP-based declarative functional programming language & API
 
 
-
-
-
-
-
-
 Released under the MIT license.

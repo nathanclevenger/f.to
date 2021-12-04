@@ -1,0 +1,20 @@
+{
+  "name": "f.to",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./index.js\"",
+    "build": "tsc build"
+  },
+  "author": "Nathan Clevenger",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "tsc-watch": "^4.5.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}
