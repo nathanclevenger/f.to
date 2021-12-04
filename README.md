@@ -2,7 +2,7 @@
 
 _Warning: this project is not production ready, API might change without notice._
 
-**[⨏.to](https://⨏.to)** is an HTTP-based declarative functional programming language & API
+[⨏.to](https://⨏.to) is an HTTP-based declarative functional programming language & API
 
 
 

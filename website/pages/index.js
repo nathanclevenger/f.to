@@ -1,81 +1,95 @@
 import Head from 'next/head'
 
+const host = '⨏'
+
+const functions = [
+  {
+    name: 'Words',
+    items: [
+      { symbol: '■', name: 'Noun' },
+      { symbol: '●', name: 'Verb' },
+      { symbol: '◧', name: 'Adjective' },
+      { symbol: '◐', name: 'Adverb' },
+      { symbol: '■', name: 'Preposition' },
+      { symbol: '⊡', name: 'Pronoun' },
+      { symbol: '□', name: 'Name' },
+      { symbol: '○', name: 'Predicate' },
+      { symbol: '⨳', name: 'Number' },
+    ]
+  }
+]
+
+
+const products = [
+  {
+    id: 1,
+    name: 'Basic Tee',
+    href: '#',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+    imageAlt: "Front of men's Basic Tee in black.",
+    price: '$35',
+    color: 'Black',
+  },
+  // More products...
+]
+
+
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-stretch justify-center min-h-screen py-2 font-sans">
       <Head>
-        <title>Create Next App</title>
+        <title>{host}.to - Cloud-Native Functional Programming</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+      <main className="items-center w-full flex-1 px-20 text-center">
+        <header className="flex items- w-full flex-1 mt-5">
+          <h1 className="text-left">
+            <a href={`https://${host}.to`}>
+              <span className="text-6xl font-thin">⨏</span>
+            </a>
+          </h1>
+        </header>
+        
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
+        {/* <p className="mt-3 text-2xl">
+          Cloud-Native Functional Programming
+        </p> */}
 
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
+        <div className="bg-white">
+          <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+            { functions.map(({name, items}) => (
+              <div>
+                <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">Words</h2>
 
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
+                <div className="mt-20 grid grid-cols-2 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                  {functions[0].items.map(({name, symbol}) => (
+                    <a key={name} href={`https://${symbol}.to`} className="group relative hover:text-gray-600 focus:text-gray-600">
+                      <h2 className="text-6xl">
+                        {symbol}
+                      </h2>
+                      <div className="mt-4">
+                        <div>
+                          <h3 className="text-sm text-gray-700">
+                              {name}
+                          </h3>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            }
+          </div>
         </div>
       </main>
 
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
+      <footer className="flex justify-center w-full h-24 border-t">
+      { functions[0].items.map(({name, symbol}) => (
+        <a className="flex px-5 items-center" href={`https://${symbol}.to`}> {symbol} </a>
+      ))}
       </footer>
     </div>
   )
