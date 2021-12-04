@@ -16,21 +16,21 @@ const functions = [
       { symbol: '○', name: 'Predicate' },
       { symbol: '⨳', name: 'Number' },
     ]
-  }
-]
-
-
-const products = [
-  {
-    id: 1,
-    name: 'Basic Tee',
-    href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
   },
-  // More products...
+  {
+    name: 'Words',
+    items: [
+      { symbol: '■', name: 'Noun' },
+      { symbol: '●', name: 'Verb' },
+      { symbol: '◧', name: 'Adjective' },
+      { symbol: '◐', name: 'Adverb' },
+      { symbol: '■', name: 'Preposition' },
+      { symbol: '⊡', name: 'Pronoun' },
+      { symbol: '□', name: 'Name' },
+      { symbol: '○', name: 'Predicate' },
+      { symbol: '⨳', name: 'Number' },
+    ]
+  },
 ]
 
 
@@ -46,20 +46,15 @@ export default function Home() {
         <header className="flex items- w-full flex-1 mt-5">
           <h1 className="text-left">
             <a href={`https://${host}.to`}>
-              <span className="text-6xl font-thin">⨏</span>
+              <span className="text-6xl">⨏</span>
             </a>
           </h1>
         </header>
-        
-
-        {/* <p className="mt-3 text-2xl">
-          Cloud-Native Functional Programming
-        </p> */}
 
         <div className="bg-white">
           <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
             { functions.map(({name, items}) => (
-              <div>
+              <div className="mb-20" >
                 <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">Words</h2>
 
                 <div className="mt-20 grid grid-cols-2 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
